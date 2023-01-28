@@ -30,6 +30,8 @@ public:
 
     void setPixel(int index, int color);
 
+    void setAllPixels(int color);
+
 
 };
 

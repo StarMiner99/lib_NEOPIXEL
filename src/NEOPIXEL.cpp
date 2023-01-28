@@ -47,3 +47,10 @@ void NEOPIXEL::send0() {
 void NEOPIXEL::setPixel(int index, int color) {
     this->dataSend[index] = color;
 }
+
+void NEOPIXEL::setAllPixels(int color) {
+    for (int i = 0; i < numPixels; i++) {
+        dataSend[i] = color;
+    }
+
+}
