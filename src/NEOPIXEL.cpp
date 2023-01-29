@@ -18,13 +18,15 @@ void NEOPIXEL::updatePixels() {
 
     for(int i = 0; i < numPixels; i++) {
         for (int j = 23; j >= 0; j--) { // iterate through bits
-            if ((dataSend[i] >> j & 1) == 1) {
+            if (dataSend[i] >> j & 1) {
                 send1();
             } else {
                 send0();
             }
         }
     }
+
+    __enable_irq();
 
 
     wait_us(50);
@@ -53,4 +55,8 @@ void NEOPIXEL::setAllPixels(int color) {
         dataSend[i] = color;
     }
 
+}
+
+int NEOPIXEL::getPixelColor(int index) {
+    return dataSend[index];
 }

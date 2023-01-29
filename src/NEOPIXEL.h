@@ -21,18 +21,17 @@ class NEOPIXEL {
     int numPixels;
     int *dataSend;
 private:
-
     void send1();
     void send0();
+
 public:
     NEOPIXEL(int numPixel, PinName neoPixelPin);
     void updatePixels();
 
     void setPixel(int index, int color);
+    int getPixelColor(int index);
 
     void setAllPixels(int color);
-
-
 };
 
 
